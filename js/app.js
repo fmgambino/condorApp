@@ -97,6 +97,6 @@ injectIcons(); refreshSponsors(); setInterval(tick,1700);
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 
 // Supabase: reemplazar por tus credenciales al conectar producción.
-const SUPABASE_URL = 'TU_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'TU_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://wzsqorglemfedlrxowrs.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_q7x-_jYTNalYSYOMzQhw1w_V4ZVOMlL';
 // const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
