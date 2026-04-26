@@ -1,0 +1,11 @@
+{
+  "name": "CondorApp",
+  "short_name": "CondorApp",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#191919",
+  "theme_color": "#45b9ad",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
