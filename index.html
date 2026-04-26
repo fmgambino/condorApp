@@ -6,29 +6,26 @@
   <title>CondorApp</title>
   <meta name="theme-color" content="#191919" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <!-- Reemplazar favicon acá -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body>
+<body class="dark">
   <section id="loginScreen" class="login-screen">
-    <div class="login-card">
+    <div class="login-card glass">
       <img src="assets/logo-condor.svg" class="login-logo" alt="CondorApp logo" />
       <h1>CondorApp</h1>
-      <p>Control, telemetría y monitoreo del cohete de propulsión por presión de agua.</p>
+      <p>Telemetría, cámaras, comunicación LoRa y control operativo del cohete por presión de agua.</p>
       <form id="loginForm" class="login-form">
-        <label>Email</label>
-        <input id="email" type="email" value="admin@condor.app" required />
-        <label>Contraseña</label>
-        <input id="password" type="password" value="admin123" required />
+        <label>Email<input id="email" type="email" value="admin@condor.app" required /></label>
+        <label>Contraseña<input id="password" type="password" value="admin123" required /></label>
         <button class="btn primary" type="submit">Ingresar</button>
       </form>
       <div class="demo-access">
-        <button class="btn soft" data-demo="admin">Demo Administrador</button>
-        <button class="btn soft" data-demo="participante">Demo Participante</button>
+        <button class="btn soft" type="button" data-demo="admin">Demo Administrador</button>
+        <button class="btn soft" type="button" data-demo="participante">Demo Participante</button>
       </div>
       <small>Admin: admin@condor.app / admin123 · Participante: participante@condor.app / part123</small>
     </div>
@@ -37,7 +34,6 @@
   <div id="appShell" class="app-shell hidden">
     <aside id="sidebar" class="sidebar">
       <button id="brandBtn" class="brand" title="Contraer menú">
-        <!-- Reemplazar logo acá -->
         <img src="assets/logo-condor.svg" alt="CondorApp" />
         <span><strong>Condor</strong><small>App</small></span>
       </button>
@@ -46,17 +42,20 @@
 
     <main class="main">
       <header class="topbar">
-        <div>
+        <div class="title-block">
           <h2 id="pageTitle">Dashboard General de Operaciones</h2>
           <p id="pageSubtitle">Telemetría y control del cohete</p>
         </div>
         <div class="top-actions">
           <button id="themeBtn" class="icon-btn" title="Cambiar tema"><span id="themeIcon"></span></button>
-          <button id="notifBtn" class="icon-btn" title="Notificaciones"><span data-icon="bell"></span><b class="dot"></b></button>
+          <div class="notif-wrap">
+            <button id="notifBtn" class="icon-btn" title="Notificaciones"><span data-icon="bell"></span><b id="notifDot" class="dot"></b></button>
+            <div id="notifPreview" class="notif-preview"></div>
+          </div>
           <button id="fullBtn" class="icon-btn" title="Pantalla completa"><span data-icon="maximize"></span></button>
           <input id="profileInput" type="file" accept="image/*" hidden />
           <button id="profileBtn" class="profile-chip" title="Cambiar foto de perfil"><img id="profileImg" src="assets/avatar.svg" alt="Perfil" /><span id="userName">Usuario</span></button>
-          <button id="logoutBtn" class="btn ghost"><span data-icon="logout"></span> Salir</button>
+          <button id="logoutBtn" class="btn ghost"><span data-icon="logout"></span> <span class="logout-text">Salir</span></button>
         </div>
       </header>
 
@@ -69,12 +68,10 @@
 
       <footer class="footer">
         <p><strong>TOBAR ©2026</strong> by <a href="https://fef.ar" target="_blank" rel="noopener">FEF</a>. Todos los derechos reservados.</p>
-        <div id="sponsorSlider" class="sponsor-slider"></div>
+        <div class="sponsor-viewport"><div id="sponsorSlider" class="sponsor-slider"></div></div>
       </footer>
     </main>
   </div>
-
-  <template id="iconTemplate"></template>
   <script src="js/app.js"></script>
 </body>
 </html>

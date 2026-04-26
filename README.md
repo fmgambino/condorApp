@@ -1,23 +1,33 @@
-# CondorApp v1
+# CondorApp v4
 
-Primera versión estática para GitHub Pages con UI mobile first, SweetAlert2, Chart.js, Supabase JS CDN y PWA básica.
+Webapp mobile first para telemetría, cámaras, comunicación LoRa y control de un cohete por presión de agua.
+
+## Login demo
+- Administrador: `admin@condor.app` / `admin123`
+- Participante: `participante@condor.app` / `part123`
 
 ## Reemplazar logo y favicon
 - Logo: `assets/logo-condor.svg`
 - Favicon: `assets/favicon.svg`
-- También podés editar las rutas en `index.html`:
-  - `<link rel="icon" href="assets/favicon.svg">`
-  - `<img src="assets/logo-condor.svg">`
+- Avatar demo: `assets/avatar.svg`
 
-## Conectar Supabase
-En `js/app.js`, reemplazar `TU_SUPABASE_URL` y `TU_SUPABASE_ANON_KEY`, o cargar valores desde el módulo Configuración.
+## YouTube Live / cámaras
+Las tres cámaras del dashboard usan este embed inicial:
+`https://www.youtube.com/embed/fO9e9jnhYK8?si=a_wBnZHHgW6gu94O`
 
-Tablas sugeridas:
-- `profiles`: id, full_name, role, participant_type, permissions, avatar_url
-- `sensor_readings`: id, sensor_name, value, unit, created_at
-- `actuator_events`: id, actuator_name, state, created_at, user_id
-- `sponsors`: id, name, logo_url, website_url, priority
-- `notifications`: id, title, message, level, created_at
+Para cambiarlo desde UI: Dashboard > Cámaras en vivo > Editar URLs.
 
-## Publicar en GitHub Pages
-Subir todos los archivos al repositorio y activar Pages desde la rama principal.
+## Supabase
+El SQL actualizado está en:
+`database/condorapp_supabase.sql`
+
+Las credenciales se reemplazan al final de:
+`js/app.js`
+
+```js
+const SUPABASE_URL='TU_SUPABASE_URL';
+const SUPABASE_ANON_KEY='TU_SUPABASE_ANON_KEY';
+```
+
+## GitHub Pages
+Subir el contenido de la carpeta `CondorApp` a la raíz del repositorio o activar Pages sobre esa carpeta.
